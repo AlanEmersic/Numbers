@@ -32,17 +32,17 @@ public class NumberSum : NumberManager
     {
         int numberCount = Random.Range(buttonCount / 5, buttonCount - 5);
 
-        for (int i = 0; i < numberCount; i++)
+        for (int i = 0; i < numberCount;)
         {
             int index = Random.Range(0, buttonCount);
             string number = buttonObjects[index].GetComponentInChildren<TextMeshProUGUI>().text;
-            if (buttonsSolution.ContainsKey(buttonObjects[index]))
-            {
-                i--;
+
+            if (buttonsSolution.ContainsKey(buttonObjects[index]))                            
                 continue;
-            }
+
             buttonsSolution.Add(buttonObjects[index], number);
             sum += int.Parse(number);
+            i++;
         }
         sumText.text = string.Format($"Sum: {sum}");
     }

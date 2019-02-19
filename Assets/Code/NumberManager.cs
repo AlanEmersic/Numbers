@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -29,10 +28,6 @@ public abstract class NumberManager : MonoBehaviour
 
     void GenerateButtons()
     {
-        //string buttonsName = "Numbers";
-        //Transform buttonsHolder = new GameObject(buttonsName).transform;
-        //buttonsHolder.parent = transform;
-
         for (int i = 0; i < buttonCount; i++)
         {
             GameObject obj = Instantiate(buttonPrefab, transform);
@@ -47,10 +42,7 @@ public abstract class NumberManager : MonoBehaviour
         }
     }
 
-    protected string GetRandomNumber(int min = 1, int max = 10)
-    {
-        return Random.Range(min, max).ToString();
-    }
+    protected string GetRandomNumber(int min = 1, int max = 10) => Random.Range(min, max).ToString();
 
     protected void GenerateNumbers(int min = 1, int max = 10)
     {
